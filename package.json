@@ -1,6 +1,6 @@
 {
   "name": "nullbase-material-design-basic-layout",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "The default blueprint for ember-cli addons.",
   "keywords": [
     "ember-addon"
@@ -23,7 +23,7 @@
     "ember-cli-less": "^1.5.4"
   },
   "peerDependencies": {
-    "nullbase-core": "0.0.0"
+    "nullbase-core": "^0.0.2"
   },
   "devDependencies": {
     "broccoli-asset-rev": "^2.4.5",

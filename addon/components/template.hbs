@@ -1,0 +1,66 @@
+<div class="header {{elevation}}">
+    {{outlet headerOutletName}}
+</div>
+<div class="left-rail-navigation">
+    <div class="inner">
+        {{#if useLiquidFire}}
+            {{liquid-outlet leftRailNavigationOutletName }}
+        {{else}}
+            {{outlet leftRailNavigationOutletName}}
+        {{/if}}
+    </div>
+</div>
+<div class="left-wrapper wrapper">
+    <div class="left-sidebar ">
+        <div class="inner">
+            {{#if useLiquidFire}}
+                {{liquid-outlet leftSidebarOutletName }}
+            {{else}}
+                {{outlet leftSidebarOutletName}}
+            {{/if}}
+
+        </div>
+    </div>
+    <div class="content placeholder"></div>
+</div>
+
+<div class="center-wrapper wrapper">
+    <div class="left-sidebar placeholder"></div>
+    <div class="content">
+        {{#if useLiquidFire}}
+            {{liquid-outlet contentOutletName }}
+        {{else}}
+            {{outlet contentOutletName}}
+        {{/if}}
+
+
+
+    </div>
+    <div class="right-sidebar placeholder"></div>
+</div>
+
+<div class="right-wrapper wrapper">
+    <div class="content placeholder"></div>
+    <div class="right-sidebar ">
+        <div class="inner">
+            {{#if useLiquidFire}}
+                {{liquid-outlet rightSidebarOutletName }}
+            {{else}}
+                {{outlet rightSidebarOutletName}}
+            {{/if}}
+
+        </div>
+    </div>
+</div>
+
+<div class="footer">
+    {{outlet footerOutletName}}
+</div>
+<div class="snackbar">
+    <div class="snackbar-inner {{snackbar.snackbarType}}">
+        <div class="snackbar-message">
+            {{snackbar.message}}
+        </div>
+    </div>
+
+</div>

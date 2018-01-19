@@ -1,0 +1,6 @@
+<div class="nested-right-sidebar-content-wrapper">
+  <span class="nested-right-sidebar-content-wrapper-inner">
+  \{{ outlet "right-sidebar" }}
+      {{nb-checkbox label="Show Header" checked=appState.isNestedHeaderShowing on-tap=(route-action "toggleNestedHeader") }}
+    </span>
+</div>

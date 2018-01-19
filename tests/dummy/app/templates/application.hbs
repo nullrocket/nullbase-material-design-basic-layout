@@ -1,3 +1,8 @@
-<h2 id="title">Welcome to Ember</h2>
 
-{{outlet}}
+{{nb-basic-layout
+  isLeftSidebarOpen=appState.isLeftSidebarOpen
+  isRightSidebarOpen=appState.isRightSidebarOpen
+
+}}
+
+{{nullbase-theme-initializer contextMenu=false }}

@@ -1,0 +1,46 @@
+<div class="content-wrapper">
+    <div class="grey-panel">
+        <div class="grey-panel-inner" style="    display: flex;
+    flex-wrap: wrap;">
+            <div>
+              {{nb-checkbox label="Left sidebar open" checked=appState.isNestedLeftSidebarOpen on-tap=(route-action "toggleNestedLeftSidebar") }}
+
+              {{nb-checkbox label="Float left sidebar" checked=appState.floatNestedLeftSidebar on-tap=(route-action "toggleNestedFloatLeftSidebar") }}
+              {{nb-checkbox label="Full height left sidebar" checked=appState.fullHeightNestedLeftSidebar disabled=appState.floatNestedLeftSidebar on-tap=(route-action "toggleFullHeightNestedLeftSidebar") }}
+            </div>
+            <div>
+
+              {{nb-checkbox label="Right sidebar open" checked=appState.isNestedRightSidebarOpen on-tap=(route-action "toggleNestedRightSidebar") }}
+              {{nb-checkbox label="Float right sidebar" checked=appState.floatNestedRightSidebar on-tap=(route-action "toggleNestedFloatRightSidebar") }}
+              {{nb-checkbox label="Full height right sidebar" checked=appState.fullHeightNestedRightSidebar disabled=appState.floatNestedRightSidebar on-tap=(route-action "toggleFullHeightNestedRightSidebar") }}
+            </div>
+            <div>
+
+              {{nb-checkbox label="Show Header" checked=appState.isNestedHeaderShowing on-tap=(route-action "toggleNestedHeader") }}
+              {{nb-checkbox label="Show Footer" checked=appState.isNestedFooterShowing on-tap=(route-action "toggleNestedFooter") }}
+              {{nb-button type="flat-text" text="show snackbar" on-tap=(route-action "showSnackbar")}}
+            </div>
+        </div>
+
+    </div>
+    <div class="nb-basic-layout-wrapper">
+      {{nb-basic-layout
+      header-background-color="#dd4400"
+      isLeftSidebarOpen=appState.isNestedLeftSidebarOpen
+      isRightSidebarOpen=appState.isNestedRightSidebarOpen
+      headerOutletName="another-header-content"
+      right-sidebar-width=300
+      left-sidebar-width=300
+      floatLeftSidebar=appState.floatNestedLeftSidebar
+      fullHeightLeftSidebar=appState.fullHeightNestedLeftSidebar
+      floatRightSidebar=appState.floatNestedRightSidebar
+      fullHeightRightSidebar=appState.fullHeightNestedRightSidebar
+      headerShowing = appState.isNestedHeaderShowing
+      footerShowing = appState.isNestedFooterShowing
+      snackbarShowing= true
+      on-left-placeholder-tap=(route-action "toggleNestedLeftSidebar")
+
+      }}
+    </div>
+
+</div>

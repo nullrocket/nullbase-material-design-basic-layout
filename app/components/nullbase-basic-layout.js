@@ -1,0 +1,1 @@
+export { default } from 'nullbase-material-design-basic-layout/components/nullbase-basic-layout';

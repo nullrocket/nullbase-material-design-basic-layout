@@ -21,19 +21,21 @@ export default Ember.Component.extend(ThemedComponent, {
   leftSidebarWidth: 300,
   leftSidebarOutletName: "left-sidebar",
   rightSidebarOutletName: "right-sidebar",
+  topMenuOutletName:"top-menu",
   useLiquidFire:false,
   contentOutletName: "content",
   headerOutletName: "header-content",
   footerOutletName : "footer-content",
   leftRailNavigationOutletName:"left-rail-content",
   leftRailNavigationShowing:true,
+  topMenu:false,
   gestures:Ember.inject.service(),
 
   init(){
     this._super(...arguments);
   },
 
-  stateClass : Ember.computed('isLeftSidebarOpen','isRightSidebarOpen','floatRightSidebar','fullHeightRightSidebar', 'floatLeftSidebar', 'fullHeightLeftSidebar','footerShowing', 'headerShowing','snackbar.showing','leftRailNavigationState',function () {
+  stateClass : Ember.computed('topMenu','isLeftSidebarOpen','isRightSidebarOpen','floatRightSidebar','fullHeightRightSidebar', 'floatLeftSidebar', 'fullHeightLeftSidebar','footerShowing', 'headerShowing','snackbar.showing','leftRailNavigationState',function () {
 
     let leftSidebarPinnedState = this.get('floatLeftSidebar') ? 'lsf' : 'lsp';
     let leftSidebarHeightState =  this.get('fullHeightLeftSidebar') ?'lsfh': 'lsch';
@@ -41,11 +43,12 @@ export default Ember.Component.extend(ThemedComponent, {
     let rightSidebarHeightState = this.get('fullHeightRightSidebar')?'rsfh': 'rsch';
     let leftSidebarOpenState = this.get('isLeftSidebarOpen') ? 'lso' : 'lsc';
     let rightSidebarOpenState = this.get('isRightSidebarOpen') ? 'rso' : 'rsc';
+    let topMenu = this.get('topMenu') ? 'top-menu' : 'no-top-menu';
     let headerState = this.get('headerShowing') ?'ho':'hc';
     let footerState = this.get('footerShowing') ?'fo':'fc';
     let snackbarState = this.get('snackbar.showing') ? "sbo":'';
     let leftRailNavigationState = this.get('leftRailNavigationShowing')?'lrns':'lrnh';
-    return [ leftSidebarPinnedState,leftSidebarHeightState,rightSidebarPinnedState,leftSidebarOpenState,rightSidebarHeightState,rightSidebarOpenState,headerState,footerState,snackbarState,leftRailNavigationState].sort().join(" ");
+    return [ leftSidebarPinnedState,leftSidebarHeightState,rightSidebarPinnedState,leftSidebarOpenState,rightSidebarHeightState,rightSidebarOpenState,headerState,footerState,snackbarState,leftRailNavigationState,topMenu].sort().join(" ");
 
 
   }),

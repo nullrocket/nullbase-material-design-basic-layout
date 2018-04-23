@@ -158,9 +158,9 @@ var SnackbarService = Ember.Object.extend({
 });
 
 export function initialize( application ) {
-  application.register('snackbar-service:service', SnackbarService, { instantiate: true });
+  application.register('service:snackbar', SnackbarService, { instantiate: true });
   ['route','component:nb-basic-layout'].forEach(injectionTarget => {
-    application.inject(injectionTarget, 'snackbar', 'snackbar-service:service');
+    application.inject(injectionTarget, 'snackbar', 'service:snackbar');
   });
   application.register('nb-basic-layout-theme-init:main', ThemeHandler, { instantiate: true });
   application.inject('component:nb-basic-layout', '_themeHandler', 'nb-basic-layout-theme-init:main');
